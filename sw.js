@@ -1,4 +1,4 @@
-const CACHE = 'bouquet-v1';
+const CACHE = 'bouquet-v2';
 const ASSETS = [
   '/',
   '/index.html',
