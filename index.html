@@ -728,9 +728,10 @@ async function saveAccountInfo() {
 
   btn.disabled = true; btn.textContent = 'Saving...';
 
-  const { error } = await sb.from('profiles').update({
+  const { error } = await sb.from('profiles').upsert({
+    id: currentUser.id,
     full_name: name, username, bio
-  }).eq('id', currentUser.id);
+  }, { onConflict: 'id' });
 
   btn.disabled = false; btn.textContent = 'Save changes';
 
