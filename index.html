@@ -25,8 +25,6 @@
 }
 html,body{height:100%;width:100%;overflow:hidden;background:var(--burg3);}
 .app{font-family:'Outfit',sans-serif;background:var(--cream);color:var(--text);height:100dvh;width:100%;max-width:430px;margin:0 auto;display:flex;flex-direction:column;overflow:hidden;position:relative;}
-
-/* AUTH SCREEN */
 .auth-screen{display:flex;flex-direction:column;height:100%;background:linear-gradient(160deg,var(--burg3) 0%,var(--burg) 50%,var(--amber) 100%);}
 .auth-hero{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 32px;}
 .auth-wordmark{font-family:'Playfair Display',serif;font-size:42px;font-weight:400;color:#fff;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:8px;}
@@ -39,17 +37,16 @@ html,body{height:100%;width:100%;overflow:hidden;background:var(--burg3);}
 .auth-input{font-family:'Outfit',sans-serif;font-size:16px;padding:13px 14px;border:1.5px solid var(--dustrose);border-radius:12px;background:var(--cream);color:var(--text);outline:none;width:100%;margin-bottom:12px;-webkit-appearance:none;}
 .auth-input:focus{border-color:var(--burg);background:#fff;}
 .auth-btn{background:linear-gradient(135deg,var(--burg3),var(--burg) 55%,var(--amber));color:#fff;border:none;border-radius:50px;padding:15px;font-family:'Playfair Display',serif;font-size:16px;font-style:italic;cursor:pointer;width:100%;margin-top:4px;box-shadow:0 4px 20px rgba(107,26,42,0.4);transition:opacity 0.15s;}
-.auth-btn:active{opacity:0.85;}
-.auth-err{color:var(--burg);font-size:12px;text-align:center;margin-top:8px;min-height:18px;}
-
-/* MAIN APP */
+.auth-btn:disabled{opacity:0.6;}
+.auth-err{font-size:12px;text-align:center;margin-top:10px;min-height:18px;padding:6px 10px;border-radius:8px;}
+.auth-err.error{color:var(--burg);background:rgba(107,26,42,0.07);}
+.auth-err.success{color:#2A6A38;background:rgba(60,140,80,0.1);}
 .grad-header{background:linear-gradient(160deg,var(--burg3) 0%,var(--burg) 45%,var(--amber) 100%);padding:max(env(safe-area-inset-top,0px),20px) 20px 0;border-radius:0 0 28px 28px;flex-shrink:0;}
 .wordmark-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;}
 .wordmark{font-family:'Playfair Display',serif;font-size:21px;font-weight:400;color:#fff;letter-spacing:0.2em;text-transform:uppercase;}
 .wordmark em{font-style:italic;color:var(--dustrose);}
 .hicons{display:flex;gap:7px;}
 .icon-btn{width:34px;height:34px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.85);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:15px;transition:all 0.15s;}
-.icon-btn:hover{background:rgba(255,255,255,0.2);}
 .cellar-hero{padding:0 2px 18px;}
 .eyebrow{font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:5px;}
 .big-title{font-family:'Playfair Display',serif;font-size:34px;font-weight:400;color:#fff;line-height:1.05;margin-bottom:7px;}
@@ -59,15 +56,13 @@ html,body{height:100%;width:100%;overflow:hidden;background:var(--burg3);}
 .log-btn-top .plus-circle{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--burg),var(--amber));display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;font-style:normal;flex-shrink:0;}
 .pill-group{display:flex;gap:7px;overflow-x:auto;margin-bottom:9px;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:2px;}
 .pill-group::-webkit-scrollbar{display:none;}
-.pill{font-family:'Outfit',sans-serif;font-size:12px;padding:7px 16px;border-radius:20px;border:1.5px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);cursor:pointer;white-space:nowrap;transition:all 0.15s;-webkit-tap-highlight-color:transparent;}
+.pill{font-family:'Outfit',sans-serif;font-size:12px;padding:7px 16px;border-radius:20px;border:1.5px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);cursor:pointer;white-space:nowrap;transition:all 0.15s;}
 .pill.active{background:#fff;border-color:#fff;color:var(--burg);font-weight:500;}
 .nav-tabs{display:flex;border-top:1px solid rgba(255,255,255,0.12);}
-.tab{font-family:'Outfit',sans-serif;font-size:10px;color:rgba(255,255,255,0.45);padding:13px 0;cursor:pointer;border-bottom:2px solid transparent;transition:all 0.15s;letter-spacing:0.14em;text-transform:uppercase;flex:1;text-align:center;-webkit-tap-highlight-color:transparent;}
+.tab{font-family:'Outfit',sans-serif;font-size:10px;color:rgba(255,255,255,0.45);padding:13px 0;cursor:pointer;border-bottom:2px solid transparent;transition:all 0.15s;letter-spacing:0.14em;text-transform:uppercase;flex:1;text-align:center;}
 .tab.active{color:#fff;border-bottom-color:var(--dustrose);}
-
 .body{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:16px 16px 40px;}
-.wcard{background:var(--white);border-radius:14px;padding:13px 15px;display:flex;align-items:center;gap:14px;cursor:pointer;transition:all 0.15s;margin-bottom:8px;border:1px solid rgba(107,26,42,0.07);}
-.wcard:hover{border-color:var(--dustrose);}
+.wcard{background:var(--white);border-radius:14px;padding:13px 15px;display:flex;align-items:center;gap:14px;margin-bottom:8px;border:1px solid rgba(107,26,42,0.07);}
 .winfo{flex:1;min-width:0;}
 .wname{font-family:'Playfair Display',serif;font-size:15px;font-style:italic;color:var(--text);margin-bottom:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .wmeta{font-size:11px;color:var(--textlight);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-bottom:5px;}
@@ -76,61 +71,44 @@ html,body{height:100%;width:100%;overflow:hidden;background:var(--burg3);}
 .cstar svg{width:13px;height:13px;display:block;}
 .empty-state{text-align:center;padding:50px 20px;}
 .empty-state p{font-family:'Playfair Display',serif;font-size:17px;font-style:italic;color:var(--textmid);}
-
-/* MODAL */
-.modal-wrap{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(42,16,24,0.65);display:flex;align-items:flex-end;justify-content:center;z-index:100;}
-.modal{background:var(--white);border-radius:22px 22px 0 0;width:100%;max-width:430px;overflow:hidden;max-height:92dvh;display:flex;flex-direction:column;box-shadow:0 -10px 40px rgba(42,16,24,0.25);}
-.mhead{background:linear-gradient(135deg,var(--burg3),var(--burg) 60%,var(--amber));padding:16px 18px 14px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+.modal-wrap{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(42,16,24,0.65);display:flex;align-items:flex-end;justify-content:center;z-index:200;}
+.modal{background:var(--white);border-radius:22px 22px 0 0;width:100%;max-width:430px;max-height:92dvh;display:flex;flex-direction:column;}
+.mhead{background:linear-gradient(135deg,var(--burg3),var(--burg) 60%,var(--amber));padding:16px 18px 14px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0;border-radius:22px 22px 0 0;}
 .mtitle{font-family:'Playfair Display',serif;font-size:19px;font-style:italic;color:#fff;}
-.mclose{width:28px;height:28px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.3);background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.85);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:13px;}
+.mclose{width:28px;height:28px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.3);background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.85);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:13px;flex-shrink:0;}
 .mbody{padding:16px 18px 32px;display:flex;flex-direction:column;gap:12px;overflow-y:auto;-webkit-overflow-scrolling:touch;}
-.flabel{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--textmid);margin-bottom:4px;font-weight:500;}
+.flabel{font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:var(--textmid);margin-bottom:4px;font-weight:500;display:block;}
 .req::after{content:'·';color:var(--burg);margin-left:3px;font-size:14px;}
-.finput,.fselect,.ftextarea{font-family:'Outfit',sans-serif;font-size:16px;padding:11px 13px;border:1.5px solid var(--dustrose);border-radius:12px;background:var(--cream);color:var(--text);outline:none;width:100%;transition:border-color 0.15s;-webkit-appearance:none;}
+.finput,.fselect,.ftextarea{font-family:'Outfit',sans-serif;font-size:16px;padding:11px 13px;border:1.5px solid var(--dustrose);border-radius:12px;background:var(--cream);color:var(--text);outline:none;width:100%;transition:border-color 0.15s;-webkit-appearance:none;display:block;}
 .finput::placeholder,.ftextarea::placeholder{color:var(--textlight);}
 .finput:focus,.fselect:focus,.ftextarea:focus{border-color:var(--burg);background:#fff;}
 .ftextarea{resize:vertical;min-height:80px;line-height:1.5;}
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-.star-row{display:flex;gap:8px;}
-.sbtn{background:none;border:none;padding:0;cursor:pointer;-webkit-tap-highlight-color:transparent;}
-.photo-zone{border:2px dashed var(--dustrose);border-radius:12px;padding:20px;text-align:center;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;background:var(--cream);}
-.photo-zone .ti{font-size:24px;color:var(--amber2);}
-.photo-zone span{font-size:13px;color:var(--textlight);}
-.photo-prev{width:100%;height:130px;object-fit:cover;border-radius:12px;}
-.save-btn{background:linear-gradient(135deg,var(--burg3),var(--burg) 55%,var(--amber));color:#fff;border:none;border-radius:50px;padding:15px;font-family:'Playfair Display',serif;font-size:16px;font-style:italic;font-weight:500;cursor:pointer;width:100%;box-shadow:0 4px 20px rgba(107,26,42,0.4);transition:opacity 0.15s;}
-.save-btn:active{opacity:0.85;}
-.ferr{color:var(--burg);font-size:12px;text-align:center;display:none;}
-
-/* PROFILE */
+.star-row{display:flex;gap:8px;padding:4px 0;}
+.sbtn{background:none;border:none;padding:0;cursor:pointer;line-height:1;display:flex;}
+.save-btn{background:linear-gradient(135deg,var(--burg3),var(--burg) 55%,var(--amber));color:#fff;border:none;border-radius:50px;padding:15px;font-family:'Playfair Display',serif;font-size:16px;font-style:italic;font-weight:500;cursor:pointer;width:100%;box-shadow:0 4px 20px rgba(107,26,42,0.4);transition:opacity 0.15s;margin-top:4px;}
+.save-btn:disabled{opacity:0.6;}
+.ferr{color:var(--burg);font-size:12px;text-align:center;display:none;padding:6px;}
 .profile-card{background:var(--white);border-radius:16px;padding:16px;margin-bottom:12px;border:1px solid rgba(107,26,42,0.08);}
 .ptitle{font-family:'Playfair Display',serif;font-size:15px;font-style:italic;color:var(--burg);margin-bottom:14px;}
-.friends-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
-.fcard{background:var(--white);border:1px solid rgba(107,26,42,0.1);border-radius:16px;padding:12px;display:flex;align-items:center;gap:9px;cursor:pointer;transition:all 0.15s;}
-.fcard:hover{border-color:var(--dustrose);}
+.friends-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;}
+.fcard{background:var(--white);border:1px solid rgba(107,26,42,0.1);border-radius:16px;padding:12px;display:flex;align-items:center;gap:9px;cursor:pointer;}
 .avatar{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:14px;font-weight:500;flex-shrink:0;color:#fff;}
 .fname{font-size:13px;color:var(--text);font-weight:500;}
 .fct{font-size:10px;color:var(--textlight);}
 .section-label{font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--textlight);margin-bottom:10px;}
-
-/* TOAST */
 .toast{position:fixed;bottom:30px;left:50%;transform:translateX(-50%);background:var(--burg);color:#fff;padding:10px 20px;border-radius:20px;font-size:13px;z-index:999;opacity:0;transition:opacity 0.3s;pointer-events:none;white-space:nowrap;}
 .toast.show{opacity:1;}
-
-/* LOADING */
 .loading{display:flex;align-items:center;justify-content:center;padding:40px;color:var(--textlight);font-style:italic;font-family:'Playfair Display',serif;font-size:15px;}
-
-/* ADD FRIEND MODAL */
-.friend-input-wrap{display:flex;gap:8px;}
-.friend-input-wrap .finput{margin-bottom:0;}
-.search-btn{background:var(--burg);color:#fff;border:none;border-radius:12px;padding:11px 16px;font-size:13px;cursor:pointer;white-space:nowrap;flex-shrink:0;}
+.friend-input-wrap{display:flex;gap:8px;margin-bottom:4px;}
+.search-btn{background:var(--burg);color:#fff;border:none;border-radius:12px;padding:11px 16px;font-size:13px;cursor:pointer;white-space:nowrap;flex-shrink:0;font-family:'Outfit',sans-serif;}
 .friend-result{background:var(--stone);border-radius:12px;padding:12px 14px;display:flex;align-items:center;justify-content:space-between;margin-top:8px;}
-.add-friend-btn{background:var(--burg);color:#fff;border:none;border-radius:20px;padding:6px 14px;font-size:12px;cursor:pointer;}
+.add-friend-btn{background:var(--burg);color:#fff;border:none;border-radius:20px;padding:6px 14px;font-size:12px;cursor:pointer;font-family:'Outfit',sans-serif;}
 </style>
 </head>
 <body>
 <div class="app" id="app">
 
-  <!-- AUTH SCREEN -->
   <div class="auth-screen" id="auth-screen">
     <div class="auth-hero">
       <div class="auth-wordmark">Bou<em>quet</em></div>
@@ -141,27 +119,24 @@ html,body{height:100%;width:100%;overflow:hidden;background:var(--burg3);}
         <div class="auth-tab active" id="signin-tab" onclick="switchAuth('signin')">Sign in</div>
         <div class="auth-tab" id="signup-tab" onclick="switchAuth('signup')">Create account</div>
       </div>
-      <div id="auth-form">
-        <input type="email" class="auth-input" id="auth-email" placeholder="Email address" autocomplete="email"/>
-        <input type="password" class="auth-input" id="auth-password" placeholder="Password" autocomplete="current-password"/>
-        <div id="signup-fields" style="display:none;">
-          <input type="text" class="auth-input" id="auth-name" placeholder="Your name" autocomplete="name"/>
-          <input type="text" class="auth-input" id="auth-username" placeholder="Username (e.g. camila)" autocomplete="off"/>
-        </div>
-        <button class="auth-btn" id="auth-btn" onclick="handleAuth()">Sign in</button>
-        <div class="auth-err" id="auth-err"></div>
+      <input type="email" class="auth-input" id="auth-email" placeholder="Email address" autocomplete="email"/>
+      <input type="password" class="auth-input" id="auth-password" placeholder="Password" autocomplete="current-password"/>
+      <div id="signup-fields" style="display:none;">
+        <input type="text" class="auth-input" id="auth-name" placeholder="Your name" autocomplete="name"/>
+        <input type="text" class="auth-input" id="auth-username" placeholder="Username (e.g. camila)" autocomplete="off"/>
       </div>
+      <button class="auth-btn" id="auth-btn" onclick="handleAuth()">Sign in</button>
+      <div class="auth-err" id="auth-err"></div>
     </div>
   </div>
 
-  <!-- MAIN APP (hidden until logged in) -->
   <div id="main-app" style="display:none;flex-direction:column;height:100%;">
     <div class="grad-header">
       <div class="wordmark-row">
         <div class="wordmark">Bou<em>quet</em></div>
         <div class="hicons">
           <button class="icon-btn" onclick="switchTab('social')" aria-label="Circle"><i class="ti ti-users"></i></button>
-          <button class="icon-btn" onclick="signOut()" aria-label="Sign out" title="Sign out"><i class="ti ti-logout"></i></button>
+          <button class="icon-btn" onclick="openAccountModal()" aria-label="Account" title="Account"><i class="ti ti-user-circle"></i></button>
         </div>
       </div>
       <div id="cellar-hero" class="cellar-hero">
@@ -195,7 +170,6 @@ html,body{height:100%;width:100%;overflow:hidden;background:var(--burg3);}
 
     <div class="body">
       <div id="view-cellar"><div id="wlist"><div class="loading">Loading your cellar...</div></div></div>
-
       <div id="view-profile" style="display:none;">
         <div class="profile-card">
           <div class="ptitle">Your palate</div>
@@ -208,7 +182,6 @@ html,body{height:100%;width:100%;overflow:hidden;background:var(--burg3);}
           <div id="top-regions" style="display:flex;gap:6px;flex-wrap:wrap;"></div>
         </div>
       </div>
-
       <div id="view-social" style="display:none;">
         <div class="profile-card">
           <div class="ptitle">Add a friend</div>
@@ -219,16 +192,13 @@ html,body{height:100%;width:100%;overflow:hidden;background:var(--burg3);}
           <div id="friend-search-result"></div>
         </div>
         <div class="section-label">Your circle</div>
-        <div class="friends-grid" id="friends-grid" style="margin-bottom:16px;">
-          <div class="loading">Loading...</div>
-        </div>
+        <div class="friends-grid" id="friends-grid"><div class="loading" style="grid-column:span 2;">Loading...</div></div>
         <div class="section-label">Recently from friends</div>
         <div id="social-feed"><div class="loading">Loading...</div></div>
       </div>
     </div>
   </div>
 
-  <!-- LOG WINE MODAL -->
   <div class="modal-wrap" id="modal" style="display:none;" onclick="handleBg(event)">
     <div class="modal" onclick="event.stopPropagation()">
       <div class="mhead">
@@ -236,18 +206,26 @@ html,body{height:100%;width:100%;overflow:hidden;background:var(--burg3);}
         <button class="mclose" onclick="closeModal()" aria-label="Close"><i class="ti ti-x"></i></button>
       </div>
       <div class="mbody">
-        <div><div class="flabel req">Name</div><input type="text" class="finput" id="fn" placeholder="e.g. Château Margaux" autocomplete="off"/></div>
+        <div>
+          <label class="flabel req">Name</label>
+          <input type="text" class="finput" id="fn" placeholder="e.g. Château Margaux" autocomplete="off"/>
+        </div>
         <div class="frow">
-          <div><div class="flabel req">Type</div>
+          <div>
+            <label class="flabel req">Type</label>
             <select class="fselect" id="ftype">
               <option value="">Select...</option>
               <option>Red</option><option>White</option><option>Rosé</option>
               <option>Sparkling</option><option>Dessert</option><option>Orange</option>
             </select>
           </div>
-          <div><div class="flabel">Year</div><input type="number" class="finput" id="fvint" placeholder="2019" min="1900" max="2099"/></div>
+          <div>
+            <label class="flabel">Year</label>
+            <input type="number" class="finput" id="fvint" placeholder="2019" min="1900" max="2099"/>
+          </div>
         </div>
-        <div><div class="flabel">Varietal</div>
+        <div>
+          <label class="flabel">Varietal</label>
           <select class="fselect" id="fvar">
             <option value="">Select varietal...</option>
             <optgroup label="Red"><option>Cabernet Sauvignon</option><option>Merlot</option><option>Pinot Noir</option><option>Syrah / Shiraz</option><option>Malbec</option><option>Zinfandel</option><option>Sangiovese</option><option>Tempranillo</option><option>Nebbiolo</option><option>Grenache</option><option>Mourvèdre</option><option>Barbera</option><option>Carménère</option><option>Petit Verdot</option><option>Cabernet Franc</option></optgroup>
@@ -256,7 +234,8 @@ html,body{height:100%;width:100%;overflow:hidden;background:var(--burg3);}
             <option>Other</option>
           </select>
         </div>
-        <div><div class="flabel">Region</div>
+        <div>
+          <label class="flabel">Region</label>
           <select class="fselect" id="freg">
             <option value="">Select region...</option>
             <optgroup label="France"><option>Bordeaux</option><option>Burgundy</option><option>Champagne</option><option>Rhône Valley</option><option>Loire Valley</option><option>Alsace</option><option>Provence</option><option>Languedoc-Roussillon</option><option>Beaujolais</option></optgroup>
@@ -268,11 +247,63 @@ html,body{height:100%;width:100%;overflow:hidden;background:var(--burg3);}
             <option>Other</option>
           </select>
         </div>
-        <div><div class="flabel">Producer / Vineyard</div><input type="text" class="finput" id="fprod" placeholder="e.g. Domaine Leroy" autocomplete="off"/></div>
-        <div><div class="flabel">Your rating</div><div class="star-row" id="modal-stars"></div></div>
-        <div><div class="flabel">Tasting notes</div><textarea class="ftextarea" id="fnotes" placeholder="Where you had it, who with, how it tasted..."></textarea></div>
-        <button class="save-btn" onclick="submitWine()">Save to my cellar</button>
+        <div>
+          <label class="flabel">Producer / Vineyard</label>
+          <input type="text" class="finput" id="fprod" placeholder="e.g. Domaine Leroy" autocomplete="off"/>
+        </div>
+        <div>
+          <label class="flabel">Your rating</label>
+          <div class="star-row" id="modal-stars"></div>
+        </div>
+        <div>
+          <label class="flabel">Tasting notes</label>
+          <textarea class="ftextarea" id="fnotes" placeholder="Where you had it, who with, how it tasted..."></textarea>
+        </div>
+        <button class="save-btn" id="save-btn" onclick="submitWine()">Save to my cellar</button>
         <div class="ferr" id="ferr">Please enter a name and select a type.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-wrap" id="account-modal" style="display:none;" onclick="handleAccountBg(event)">
+    <div class="modal" onclick="event.stopPropagation()">
+      <div class="mhead">
+        <div class="mtitle">My Account</div>
+        <button class="mclose" onclick="closeAccountModal()" aria-label="Close"><i class="ti ti-x"></i></button>
+      </div>
+      <div class="mbody">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:8px;padding:8px 0 4px;">
+          <div class="avatar" id="account-avatar" style="width:64px;height:64px;font-size:22px;"></div>
+          <div style="font-size:12px;color:var(--textlight);" id="account-email"></div>
+        </div>
+
+        <div>
+          <label class="flabel">Full name</label>
+          <input type="text" class="finput" id="acc-name" placeholder="Your name" autocomplete="off"/>
+        </div>
+        <div>
+          <label class="flabel">Username</label>
+          <input type="text" class="finput" id="acc-username" placeholder="username" autocomplete="off"/>
+        </div>
+        <div>
+          <label class="flabel">Bio</label>
+          <textarea class="ftextarea" id="acc-bio" placeholder="A fun line about your wine taste..." style="min-height:60px;"></textarea>
+        </div>
+        <button class="save-btn" id="acc-save-btn" onclick="saveAccountInfo()">Save changes</button>
+        <div class="ferr" id="acc-info-msg" style="color:#2A6A38;"></div>
+
+        <div style="height:1px;background:rgba(107,26,42,0.1);margin:8px 0;"></div>
+
+        <div>
+          <label class="flabel">New password</label>
+          <input type="password" class="finput" id="acc-newpass" placeholder="At least 6 characters" autocomplete="new-password"/>
+        </div>
+        <button class="save-btn" id="acc-pass-btn" onclick="changePassword()" style="background:linear-gradient(135deg,#4A7C59,#6B9B7A);">Update password</button>
+        <div class="ferr" id="acc-pass-msg" style="color:#2A6A38;"></div>
+
+        <div style="height:1px;background:rgba(107,26,42,0.1);margin:8px 0;"></div>
+
+        <button class="save-btn" onclick="signOut()" style="background:none;color:var(--burg);box-shadow:none;border:1.5px solid var(--dustrose);">Sign out</button>
       </div>
     </div>
   </div>
@@ -281,52 +312,85 @@ html,body{height:100%;width:100%;overflow:hidden;background:var(--burg3);}
 </div>
 
 <script>
-// ── Supabase init ──────────────────────────────────────────────
 const SUPA_URL = 'https://fuajmqxtkngarswfsiny.supabase.co';
 const SUPA_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ1YWptcXh0a25nYXJzd2ZzaW55Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk1OTQ1ODAsImV4cCI6MjA5NTE3MDU4MH0.l2H3gx-3ZAYnkRrlOI_oHF_IwUOUBKxB7OlVuzEItoA';
 const sb = supabase.createClient(SUPA_URL, SUPA_KEY);
 
-// ── State ──────────────────────────────────────────────────────
 let currentUser = null;
 let currentProfile = null;
 let wines = [];
-let selR = 0, photoData = null, spiderInst = null;
-let activeType = '', activeStatus = 'all';
+let selR = 0;
+let spiderInst = null;
+let activeType = '';
+let activeStatus = 'all';
 let authMode = 'signin';
 
 // ── Auth ───────────────────────────────────────────────────────
 function switchAuth(mode) {
   authMode = mode;
-  document.getElementById('signin-tab').classList.toggle('active', mode === 'signin');
-  document.getElementById('signup-tab').classList.toggle('active', mode === 'signup');
-  document.getElementById('signup-fields').style.display = mode === 'signup' ? 'block' : 'none';
-  document.getElementById('auth-btn').textContent = mode === 'signin' ? 'Sign in' : 'Create account';
-  document.getElementById('auth-err').textContent = '';
+  document.getElementById('signin-tab').classList.toggle('active', mode==='signin');
+  document.getElementById('signup-tab').classList.toggle('active', mode==='signup');
+  document.getElementById('signup-fields').style.display = mode==='signup' ? 'block' : 'none';
+  document.getElementById('auth-btn').textContent = mode==='signin' ? 'Sign in' : 'Create account';
+  setAuthMsg('','');
+}
+
+function setAuthMsg(msg, type) {
+  const el = document.getElementById('auth-err');
+  el.textContent = msg;
+  el.className = 'auth-err' + (type ? ' '+type : '');
 }
 
 async function handleAuth() {
   const email = document.getElementById('auth-email').value.trim();
   const password = document.getElementById('auth-password').value;
   const btn = document.getElementById('auth-btn');
-  const err = document.getElementById('auth-err');
-  err.textContent = '';
+  setAuthMsg('','');
+
+  if (!email || !password) { setAuthMsg('Please enter your email and password.','error'); return; }
+
   btn.textContent = '...';
   btn.disabled = true;
 
   if (authMode === 'signin') {
     const { data, error } = await sb.auth.signInWithPassword({ email, password });
-    if (error) { err.textContent = error.message; btn.textContent = 'Sign in'; btn.disabled = false; return; }
+    if (error) {
+      setAuthMsg(error.message, 'error');
+      btn.textContent = 'Sign in';
+      btn.disabled = false;
+    }
+    // success handled by onAuthStateChange
   } else {
     const name = document.getElementById('auth-name').value.trim();
-    const username = document.getElementById('auth-username').value.trim().toLowerCase().replace(/\s/g,'');
-    if (!name || !username) { err.textContent = 'Please fill in all fields.'; btn.textContent = 'Create account'; btn.disabled = false; return; }
+    const username = document.getElementById('auth-username').value.trim().toLowerCase().replace(/[^a-z0-9_]/g,'');
+    if (!name || !username) { setAuthMsg('Please fill in your name and username.','error'); btn.textContent='Create account'; btn.disabled=false; return; }
+    if (username.length < 3) { setAuthMsg('Username must be at least 3 characters.','error'); btn.textContent='Create account'; btn.disabled=false; return; }
+
     const { data, error } = await sb.auth.signUp({ email, password });
-    if (error) { err.textContent = error.message; btn.textContent = 'Create account'; btn.disabled = false; return; }
+    if (error) {
+      setAuthMsg(error.message, 'error');
+      btn.textContent = 'Create account';
+      btn.disabled = false;
+      return;
+    }
+    // Create profile immediately
     if (data.user) {
-      await sb.from('profiles').insert({ id: data.user.id, username, full_name: name });
+      const { error: profileError } = await sb.from('profiles').upsert({
+        id: data.user.id,
+        username,
+        full_name: name
+      });
+      if (profileError) console.warn('Profile error:', profileError.message);
+    }
+    setAuthMsg('Account created! Signing you in...', 'success');
+    // Auto sign in after signup
+    const { error: signInError } = await sb.auth.signInWithPassword({ email, password });
+    if (signInError) {
+      setAuthMsg('Account created! Please sign in.', 'success');
+      switchAuth('signin');
+      btn.disabled = false;
     }
   }
-  btn.disabled = false;
 }
 
 async function signOut() {
@@ -334,76 +398,101 @@ async function signOut() {
   currentUser = null; currentProfile = null; wines = [];
   document.getElementById('auth-screen').style.display = 'flex';
   document.getElementById('main-app').style.display = 'none';
+  document.getElementById('auth-email').value = '';
+  document.getElementById('auth-password').value = '';
+  setAuthMsg('','');
+  document.getElementById('auth-btn').textContent = 'Sign in';
+  document.getElementById('auth-btn').disabled = false;
+  switchAuth('signin');
 }
 
-// ── Boot ───────────────────────────────────────────────────────
 sb.auth.onAuthStateChange(async (event, session) => {
   if (session?.user) {
     currentUser = session.user;
-    const { data } = await sb.from('profiles').select('*').eq('id', currentUser.id).single();
-    currentProfile = data;
+    // Load or create profile
+    let { data: profile } = await sb.from('profiles').select('*').eq('id', currentUser.id).single();
+    if (!profile) {
+      // Profile doesn't exist yet, wait a moment and retry
+      await new Promise(r => setTimeout(r, 500));
+      const { data: retryProfile } = await sb.from('profiles').select('*').eq('id', currentUser.id).single();
+      profile = retryProfile;
+    }
+    currentProfile = profile;
     document.getElementById('auth-screen').style.display = 'none';
     document.getElementById('main-app').style.display = 'flex';
+    document.getElementById('auth-btn').disabled = false;
     await loadWines();
     subscribeRealtime();
   }
 });
 
-// ── Load wines ─────────────────────────────────────────────────
+// ── Wines ──────────────────────────────────────────────────────
 async function loadWines() {
-  const { data, error } = await sb.from('wines').select('*').eq('user_id', currentUser.id).order('created_at', { ascending: false });
-  if (error) { showToast('Error loading wines'); return; }
+  const { data, error } = await sb.from('wines')
+    .select('*')
+    .eq('user_id', currentUser.id)
+    .order('created_at', { ascending: false });
+  if (error) { console.error('Load wines error:', error); showToast('Error loading wines'); return; }
   wines = data || [];
   renderList();
 }
 
-// ── Realtime subscription ──────────────────────────────────────
 function subscribeRealtime() {
-  sb.channel('wines-changes')
-    .on('postgres_changes', { event: '*', schema: 'public', table: 'wines', filter: `user_id=eq.${currentUser.id}` },
-      async (payload) => {
-        await loadWines();
-        if (document.getElementById('view-profile').style.display !== 'none') renderSpider();
-      })
+  sb.channel('wines-realtime-'+currentUser.id)
+    .on('postgres_changes', {
+      event: '*', schema: 'public', table: 'wines',
+      filter: `user_id=eq.${currentUser.id}`
+    }, async () => {
+      await loadWines();
+      if (document.getElementById('view-profile').style.display !== 'none') renderSpider();
+    })
     .subscribe();
 }
 
-// ── Render helpers ─────────────────────────────────────────────
+// ── Render ─────────────────────────────────────────────────────
 function starSVG(filled) {
   const c = filled ? '#C4682A' : '#E8C8B8';
   return `<span class="cstar"><svg viewBox="0 0 20 20" fill="${c}" xmlns="http://www.w3.org/2000/svg"><path d="M10 1.5l2.39 4.84 5.34.78-3.86 3.76.91 5.32L10 13.77l-4.78 2.43.91-5.32L2.27 7.12l5.34-.78z"/></svg></span>`;
 }
 function renderStars(n) { let s=''; for(let i=1;i<=5;i++) s+=starSVG(i<=n); return s; }
-function esc(s) { return s?(s+'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'):''; }
+function esc(s) { return s ? (s+'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;') : ''; }
 function avatarColor(str) {
-  const colors = ['#6B1A2A','#8B4513','#2E5984','#4A7C59','#7B4F8A','#C4682A'];
-  let h = 0; for (let i=0;i<(str||'').length;i++) h = (str.charCodeAt(i)+((h<<5)-h));
-  return colors[Math.abs(h) % colors.length];
+  const colors=['#6B1A2A','#8B4513','#2E5984','#4A7C59','#7B4F8A','#C4682A'];
+  let h=0; for(let i=0;i<(str||'').length;i++) h=(str.charCodeAt(i)+((h<<5)-h));
+  return colors[Math.abs(h)%colors.length];
 }
 function initials(name) { return (name||'?').split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2); }
 
 function buildModalStars() {
-  const row = document.getElementById('modal-stars'); if (!row) return;
+  const row = document.getElementById('modal-stars');
+  if (!row) return;
   row.innerHTML = '';
   for (let i=1;i<=5;i++) {
     const btn = document.createElement('button');
-    btn.className='sbtn'; btn.dataset.v=i;
+    btn.className = 'sbtn';
+    btn.type = 'button';
     const c = i<=selR ? '#C4682A' : '#D8B8A8';
-    btn.innerHTML=`<svg viewBox="0 0 24 24" width="30" height="30" fill="${c}" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>`;
-    btn.onclick=()=>{ selR=i; buildModalStars(); };
+    btn.innerHTML = `<svg viewBox="0 0 24 24" width="32" height="32" fill="${c}" xmlns="http://www.w3.org/2000/svg"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>`;
+    btn.onclick = () => { selR=i; buildModalStars(); };
     row.appendChild(btn);
   }
 }
 
 function renderList() {
-  const list = wines.filter(w => (activeStatus==='all'||w.status===activeStatus) && (!activeType||w.type===activeType));
+  const list = wines.filter(w =>
+    (activeStatus==='all' || w.status===activeStatus) &&
+    (!activeType || w.type===activeType)
+  );
   const c = document.getElementById('wlist');
-  if (!list.length) { c.innerHTML='<div class="empty-state"><p>Your cellar awaits —<br/>start logging wines</p></div>'; updateSubcounts(); return; }
-  c.innerHTML = list.map(w=>`<div class="wcard">
+  if (!list.length) {
+    c.innerHTML = '<div class="empty-state"><p>Your cellar awaits —<br/>start logging wines</p></div>';
+    updateSubcounts(); return;
+  }
+  c.innerHTML = list.map(w => `<div class="wcard">
     <div class="winfo">
-      <div class="wname">${esc(w.name)}${w.vintage?` <span style="font-size:11px;font-style:normal;color:var(--textlight);">${w.vintage}</span>`:''}</div>
+      <div class="wname">${esc(w.name)}${w.vintage ? ` <span style="font-size:11px;font-style:normal;color:var(--textlight);">${w.vintage}</span>` : ''}</div>
       <div class="wmeta">${esc([w.producer,w.region].filter(Boolean).join(' · '))}</div>
-      <span class="wtag">${esc(w.type)}${w.varietal?' · '+esc(w.varietal):''}</span>
+      <span class="wtag">${esc(w.type)}${w.varietal ? ' · '+esc(w.varietal) : ''}</span>
     </div>
     <div class="cute-stars">${renderStars(w.rating||3)}</div>
   </div>`).join('');
@@ -413,74 +502,98 @@ function renderList() {
 function updateSubcounts() {
   const tried = wines.filter(w=>w.status==='tried').length;
   const wish = wines.filter(w=>w.status==='wishlist').length;
-  document.getElementById('subcounts').innerHTML=`<b>${wines.length}</b> wines · <b>${tried}</b> tried · <b>${wish}</b> to try`;
+  document.getElementById('subcounts').innerHTML = `<b>${wines.length}</b> wines · <b>${tried}</b> tried · <b>${wish}</b> to try`;
 }
 
-function setStatus(s,el) { activeStatus=s; document.querySelectorAll('#status-pills .pill').forEach(p=>p.classList.remove('active')); el.classList.add('active'); renderList(); }
-function setType(t,el) { activeType=t; document.querySelectorAll('#type-pills .pill').forEach(p=>p.classList.remove('active')); el.classList.add('active'); renderList(); }
+function setStatus(s,el) {
+  activeStatus=s;
+  document.querySelectorAll('#status-pills .pill').forEach(p=>p.classList.remove('active'));
+  el.classList.add('active'); renderList();
+}
+function setType(t,el) {
+  activeType=t;
+  document.querySelectorAll('#type-pills .pill').forEach(p=>p.classList.remove('active'));
+  el.classList.add('active'); renderList();
+}
 
 function switchTab(t) {
   ['cellar','profile','social'].forEach(v => {
-    document.getElementById('view-'+v).style.display = v===t?'block':'none';
+    document.getElementById('view-'+v).style.display = v===t ? 'block' : 'none';
     document.getElementById('tab-'+v).classList.toggle('active', v===t);
   });
-  document.getElementById('cellar-hero').style.display = t==='cellar'?'block':'none';
+  document.getElementById('cellar-hero').style.display = t==='cellar' ? 'block' : 'none';
   if (t==='profile') renderSpider();
   if (t==='social') loadSocial();
 }
 
-// ── Palate spider ──────────────────────────────────────────────
+// ── Palate ─────────────────────────────────────────────────────
 function renderSpider() {
   const vMap = {};
   wines.filter(w=>w.varietal&&w.rating>=3).forEach(w=>{ vMap[w.varietal]=(vMap[w.varietal]||0)+w.rating; });
   const labels = Object.keys(vMap);
   const cv = document.getElementById('spiderChart');
+  const smId = 'spider-msg';
   if (labels.length < 3) {
     cv.style.display='none';
-    if (!document.getElementById('spider-msg')) cv.insertAdjacentHTML('afterend','<div id="spider-msg" style="font-size:13px;color:var(--textlight);text-align:center;padding:24px;font-style:italic;">Log at least 3 different varietals to see your palate chart.</div>');
-    const rr = document.getElementById('top-regions');
-    if(rr) rr.innerHTML='<span style="font-size:12px;color:var(--textlight);font-style:italic;">Log more wines to see your favourite regions.</span>';
+    if (!document.getElementById(smId)) cv.insertAdjacentHTML('afterend',`<div id="${smId}" style="font-size:13px;color:var(--textlight);text-align:center;padding:24px;font-style:italic;">Log at least 3 different varietals to see your palate chart.</div>`);
+    document.getElementById('top-regions').innerHTML='<span style="font-size:12px;color:var(--textlight);font-style:italic;">Log more wines to see your favourite regions.</span>';
     return;
   }
   cv.style.display='block';
-  const sm = document.getElementById('spider-msg'); if(sm) sm.remove();
-  const mx = Math.max(...Object.values(vMap));
+  const sm=document.getElementById(smId); if(sm) sm.remove();
+  const mx=Math.max(...Object.values(vMap));
   if (spiderInst) spiderInst.destroy();
-  spiderInst = new Chart(cv,{type:'radar',data:{labels,datasets:[{label:'Palate',data:labels.map(l=>Math.round(vMap[l]/mx*100)),backgroundColor:'rgba(107,26,42,0.15)',borderColor:'#C4682A',borderWidth:2,pointBackgroundColor:'#C4682A',pointRadius:5}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{r:{beginAtZero:true,max:100,ticks:{display:false},grid:{color:'rgba(107,26,42,0.1)'},angleLines:{color:'rgba(107,26,42,0.1)'},pointLabels:{font:{family:"'Outfit',sans-serif",size:12},color:'#7A4050'}}}}});
-  const rMap = {};
+  spiderInst = new Chart(cv, {
+    type:'radar',
+    data:{labels,datasets:[{label:'Palate',data:labels.map(l=>Math.round(vMap[l]/mx*100)),backgroundColor:'rgba(107,26,42,0.15)',borderColor:'#C4682A',borderWidth:2,pointBackgroundColor:'#C4682A',pointRadius:5}]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{r:{beginAtZero:true,max:100,ticks:{display:false},grid:{color:'rgba(107,26,42,0.1)'},angleLines:{color:'rgba(107,26,42,0.1)'},pointLabels:{font:{family:"'Outfit',sans-serif",size:12},color:'#7A4050'}}}}
+  });
+  const rMap={};
   wines.filter(w=>w.rating>=4&&w.region).forEach(w=>{ rMap[w.region]=(rMap[w.region]||0)+1; });
-  document.getElementById('top-regions').innerHTML = Object.keys(rMap).sort((a,b)=>rMap[b]-rMap[a]).slice(0,6).map(r=>`<span style="font-size:11px;padding:5px 13px;border-radius:14px;background:rgba(107,26,42,0.1);color:var(--burg);">${esc(r)}</span>`).join('') || '<span style="font-size:12px;color:var(--textlight);font-style:italic;">Log more wines to see your favourite regions.</span>';
+  document.getElementById('top-regions').innerHTML = Object.keys(rMap).sort((a,b)=>rMap[b]-rMap[a]).slice(0,6)
+    .map(r=>`<span style="font-size:11px;padding:5px 13px;border-radius:14px;background:rgba(107,26,42,0.1);color:var(--burg);">${esc(r)}</span>`).join('')
+    || '<span style="font-size:12px;color:var(--textlight);font-style:italic;">Log more wines to see your favourite regions.</span>';
 }
 
 // ── Social ─────────────────────────────────────────────────────
 async function loadSocial() {
   const grid = document.getElementById('friends-grid');
   const feed = document.getElementById('social-feed');
-  grid.innerHTML='<div class="loading">Loading...</div>';
+  grid.innerHTML='<div class="loading" style="grid-column:span 2;">Loading...</div>';
   feed.innerHTML='<div class="loading">Loading...</div>';
 
-  const { data: friendships } = await sb.from('friendships').select('*').or(`user_id.eq.${currentUser.id},friend_id.eq.${currentUser.id}`).eq('status','accepted');
+  const { data: friendships } = await sb.from('friendships')
+    .select('*')
+    .or(`user_id.eq.${currentUser.id},friend_id.eq.${currentUser.id}`)
+    .eq('status','accepted');
+
+  const addBtn = `<div class="fcard" style="border:1px dashed rgba(107,26,42,0.2);justify-content:center;flex-direction:column;text-align:center;gap:4px;" onclick="switchTab('social');document.getElementById('friend-search-input').focus()">
+    <i class="ti ti-user-plus" style="font-size:18px;color:var(--amber2);"></i>
+    <div style="font-size:11px;color:var(--textlight);">Add friend</div>
+  </div>`;
+
   if (!friendships||!friendships.length) {
-    grid.innerHTML='<div style="grid-column:span 2;font-size:13px;color:var(--textlight);font-style:italic;padding:8px 0;">No friends yet — search above to add some!</div>';
+    grid.innerHTML = addBtn;
     feed.innerHTML='<div class="empty-state" style="padding:20px 0;"><p style="font-size:14px;">Add friends to see their wines here</p></div>';
     return;
   }
+
   const friendIds = friendships.map(f => f.user_id===currentUser.id ? f.friend_id : f.user_id);
   const { data: friendProfiles } = await sb.from('profiles').select('*').in('id', friendIds);
-  const { data: friendWines } = await sb.from('wines').select('*, profiles(full_name, username)').in('user_id', friendIds).order('created_at',{ascending:false}).limit(20);
+  const { data: friendWines } = await sb.from('wines')
+    .select('*, profiles(full_name, username)')
+    .in('user_id', friendIds)
+    .order('created_at',{ascending:false})
+    .limit(20);
 
-  const wineCounts = {};
+  const wineCounts={};
   (friendWines||[]).forEach(w=>{ wineCounts[w.user_id]=(wineCounts[w.user_id]||0)+1; });
 
   grid.innerHTML = (friendProfiles||[]).map(p=>`
     <div class="fcard">
       <div class="avatar" style="background:${avatarColor(p.username)}">${initials(p.full_name)}</div>
       <div><div class="fname">${esc(p.full_name)}</div><div class="fct">${wineCounts[p.id]||0} wines</div></div>
-    </div>`).join('') + `
-    <div class="fcard" style="border-style:dashed;justify-content:center;flex-direction:column;text-align:center;gap:4px;" onclick="switchTab('social');document.getElementById('friend-search-input').focus()">
-      <i class="ti ti-user-plus" style="font-size:18px;color:var(--amber2);"></i>
-      <div style="font-size:11px;color:var(--textlight);">Add friend</div>
-    </div>`;
+    </div>`).join('') + addBtn;
 
   feed.innerHTML = (friendWines||[]).slice(0,10).map(w=>`
     <div class="wcard">
@@ -498,7 +611,7 @@ async function searchFriend() {
   const res = document.getElementById('friend-search-result');
   if (!q) return;
   res.innerHTML='<div style="font-size:12px;color:var(--textlight);padding:8px 0;">Searching...</div>';
-  const { data, error } = await sb.from('profiles').select('*').eq('username', q).neq('id', currentUser.id).single();
+  const { data, error } = await sb.from('profiles').select('*').eq('username',q).neq('id',currentUser.id).single();
   if (error||!data) { res.innerHTML='<div style="font-size:12px;color:var(--burg);padding:8px 0;">No user found with that username.</div>'; return; }
   res.innerHTML=`<div class="friend-result">
     <div style="display:flex;align-items:center;gap:10px;">
@@ -510,26 +623,29 @@ async function searchFriend() {
 }
 
 async function addFriend(friendId, friendName) {
-  const { error } = await sb.from('friendships').insert({ user_id: currentUser.id, friend_id: friendId, status: 'accepted' });
+  const { error } = await sb.from('friendships').insert({ user_id:currentUser.id, friend_id:friendId, status:'accepted' });
   if (error) { showToast('Could not add friend'); return; }
-  await sb.from('friendships').insert({ user_id: friendId, friend_id: currentUser.id, status: 'accepted' }).catch(()=>{});
+  // Mirror the friendship so both can see each other
+  await sb.from('friendships').insert({ user_id:friendId, friend_id:currentUser.id, status:'accepted' }).catch(()=>{});
   document.getElementById('friend-search-result').innerHTML='';
   document.getElementById('friend-search-input').value='';
   showToast(`${friendName} added to your circle!`);
   loadSocial();
 }
 
-// ── Log wine ───────────────────────────────────────────────────
+// ── Log wine modal ─────────────────────────────────────────────
 function openModal() {
-  selR=0; photoData=null;
-  ['fn','fvint','fprod','fnotes'].forEach(id=>document.getElementById(id).value='');
+  selR = 0;
+  ['fn','fvint','fprod','fnotes'].forEach(id => document.getElementById(id).value='');
   document.getElementById('ftype').value='';
   document.getElementById('fvar').value='';
   document.getElementById('freg').value='';
   document.getElementById('ferr').style.display='none';
+  document.getElementById('save-btn').disabled=false;
+  document.getElementById('save-btn').textContent='Save to my cellar';
   buildModalStars();
   document.getElementById('modal').style.display='flex';
-  setTimeout(()=>document.getElementById('fn').focus(),300);
+  setTimeout(()=>document.getElementById('fn').focus(), 300);
 }
 function closeModal() { document.getElementById('modal').style.display='none'; }
 function handleBg(e) { if(e.target===e.currentTarget) closeModal(); }
@@ -537,11 +653,22 @@ function handleBg(e) { if(e.target===e.currentTarget) closeModal(); }
 async function submitWine() {
   const name = document.getElementById('fn').value.trim();
   const type = document.getElementById('ftype').value;
-  if (!name||!type) { document.getElementById('ferr').style.display='block'; return; }
+  const ferr = document.getElementById('ferr');
+  const btn = document.getElementById('save-btn');
+
+  ferr.style.display='none';
+  if (!name || !type) { ferr.style.display='block'; return; }
+  if (!currentUser) { showToast('Not logged in'); return; }
+
+  btn.disabled=true;
+  btn.textContent='Saving...';
+
+  const vintageVal = document.getElementById('fvint').value;
   const wine = {
     user_id: currentUser.id,
-    name, type,
-    vintage: document.getElementById('fvint').value ? parseInt(document.getElementById('fvint').value) : null,
+    name,
+    type,
+    vintage: vintageVal ? parseInt(vintageVal) : null,
     varietal: document.getElementById('fvar').value || null,
     region: document.getElementById('freg').value || null,
     producer: document.getElementById('fprod').value.trim() || null,
@@ -549,23 +676,96 @@ async function submitWine() {
     notes: document.getElementById('fnotes').value.trim() || null,
     status: 'tried'
   };
-  const { error } = await sb.from('wines').insert(wine);
-  if (error) { showToast('Error saving wine'); return; }
+
+  console.log('Saving wine:', wine);
+  const { data, error } = await sb.from('wines').insert(wine).select();
+  console.log('Result:', data, error);
+
+  if (error) {
+    console.error('Insert error:', error);
+    showToast('Error: ' + error.message);
+    btn.disabled=false;
+    btn.textContent='Save to my cellar';
+    return;
+  }
+
   closeModal();
   showToast('Wine added to your cellar!');
   await loadWines();
 }
 
-// ── Toast ──────────────────────────────────────────────────────
+// ── Account management ─────────────────────────────────────────
+function openAccountModal() {
+  document.getElementById('account-avatar').style.background = avatarColor(currentProfile?.username);
+  document.getElementById('account-avatar').textContent = initials(currentProfile?.full_name);
+  document.getElementById('account-email').textContent = currentUser?.email || '';
+  document.getElementById('acc-name').value = currentProfile?.full_name || '';
+  document.getElementById('acc-username').value = currentProfile?.username || '';
+  document.getElementById('acc-bio').value = currentProfile?.bio || '';
+  document.getElementById('acc-newpass').value = '';
+  setAccMsg('info','');
+  setAccMsg('pass','');
+  document.getElementById('account-modal').style.display = 'flex';
+}
+function closeAccountModal() { document.getElementById('account-modal').style.display = 'none'; }
+function handleAccountBg(e) { if (e.target === e.currentTarget) closeAccountModal(); }
+
+function setAccMsg(which, msg, isError) {
+  const el = document.getElementById(which === 'info' ? 'acc-info-msg' : 'acc-pass-msg');
+  el.textContent = msg;
+  el.style.display = msg ? 'block' : 'none';
+  el.style.color = isError ? 'var(--burg)' : '#2A6A38';
+}
+
+async function saveAccountInfo() {
+  const name = document.getElementById('acc-name').value.trim();
+  const username = document.getElementById('acc-username').value.trim().toLowerCase().replace(/[^a-z0-9_]/g,'');
+  const bio = document.getElementById('acc-bio').value.trim();
+  const btn = document.getElementById('acc-save-btn');
+
+  if (!name || !username) { setAccMsg('info','Name and username are required.', true); return; }
+  if (username.length < 3) { setAccMsg('info','Username must be at least 3 characters.', true); return; }
+
+  btn.disabled = true; btn.textContent = 'Saving...';
+
+  const { error } = await sb.from('profiles').update({
+    full_name: name, username, bio
+  }).eq('id', currentUser.id);
+
+  btn.disabled = false; btn.textContent = 'Save changes';
+
+  if (error) {
+    setAccMsg('info', error.message.includes('duplicate') ? 'That username is already taken.' : error.message, true);
+    return;
+  }
+  currentProfile = { ...currentProfile, full_name: name, username, bio };
+  setAccMsg('info', 'Profile updated!');
+  showToast('Profile updated!');
+}
+
+async function changePassword() {
+  const newPass = document.getElementById('acc-newpass').value;
+  const btn = document.getElementById('acc-pass-btn');
+  if (!newPass || newPass.length < 6) { setAccMsg('pass','Password must be at least 6 characters.', true); return; }
+
+  btn.disabled = true; btn.textContent = 'Updating...';
+  const { error } = await sb.auth.updateUser({ password: newPass });
+  btn.disabled = false; btn.textContent = 'Update password';
+
+  if (error) { setAccMsg('pass', error.message, true); return; }
+  document.getElementById('acc-newpass').value = '';
+  setAccMsg('pass', 'Password updated!');
+  showToast('Password updated!');
+}
+
 function showToast(msg) {
   const t = document.getElementById('toast');
   t.textContent=msg; t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'),2500);
+  setTimeout(()=>t.classList.remove('show'), 2500);
 }
 
-// ── PWA service worker ─────────────────────────────────────────
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
+  window.addEventListener('load', ()=>navigator.serviceWorker.register('sw.js').catch(()=>{}));
 }
 </script>
 </body>
