@@ -624,9 +624,7 @@ async function searchFriend() {
 
 async function addFriend(friendId, friendName) {
   const { error } = await sb.from('friendships').insert({ user_id:currentUser.id, friend_id:friendId, status:'accepted' });
-  if (error) { showToast('Could not add friend'); return; }
-  // Mirror the friendship so both can see each other
-  await sb.from('friendships').insert({ user_id:friendId, friend_id:currentUser.id, status:'accepted' }).catch(()=>{});
+  if (error) { showToast('Error: ' + error.message); console.error('Add friend error:', error); return; }
   document.getElementById('friend-search-result').innerHTML='';
   document.getElementById('friend-search-input').value='';
   showToast(`${friendName} added to your circle!`);
